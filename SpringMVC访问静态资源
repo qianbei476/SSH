@@ -1,8 +1,7 @@
 一、[servlet]-servlet.xml
 
-    <resources mapping="/resources/**" location="/resources/" />
-    <resources mapping="/images/**" location="/images/" />
-    <resources mapping="/js/**" location="/js/" />
+    <mvc:annotation-driven/>
+         <mvc:resources location="/imgs/" mapping="/imgs/**"/>
    
 二、web.xml
 
