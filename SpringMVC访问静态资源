@@ -1,0 +1,12 @@
+一、[servlet]-servlet.xml
+
+    <resources mapping="/resources/**" location="/resources/" />
+    <resources mapping="/images/**" location="/images/" />
+    <resources mapping="/js/**" location="/js/" />
+   
+二、web.xml
+
+<servlet-mapping>
+     <servlet-name>default</servlet-name>
+     <url-pattern>*.jpg</url-pattern>
+ </servlet-mapping>
