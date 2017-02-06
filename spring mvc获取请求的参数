@@ -1,0 +1,35 @@
+1. @PathVariable（占位符格式）
+　　该注解用来映射请求URL中绑定的占位符。通过@PathVariable可以将URL中占位符的参数绑定到controller处理方法的入参中
+    例子：
+@RequestMapping("/testPathVariable/{id}")
+public String testPathVariable(@PathVariable(value="id") Integer id){
+    System.out.println("testPathVariable:" + id);
+    return SUCCESS;
+}
+
+    在index.jsp中添加一条连接，用来触发一个请求：
+<a href="springmvc/testPathVariable/1">testPathVariable</a><br/><br/>
+
+2. @RequestParam（url键值格式）
+　　该注解也是用来获取请求参数的。那么该注解和@PathVariable有何不同呢？
+    例子：
+@RequestMapping(value="/testRequestParam")
+public String testRequestParam(@RequestParam(value="username") String username, @RequestParam(value="age", required=false, defaultValue="0") int age){
+    System.out.println("testRequestParam" + " username:" + username + " age:" +age);
+    return SUCCESS;
+}
+　
+    在index.jsp添加超链接标签
+<a href="springmvc/testRequestParam?username=jackie&age=12">testRequestParam</a><br/><br/>
+
+3. @CookieValue（cookie内容）
+   例子：
+@RequestMapping(value="/testCookieValue")
+public String testCookieValue(@CookieValue("JSESSIONID") String cookieValue){
+    System.out.println("testCookieValue: " + cookieValue);
+    return SUCCESS;
+}
+
+　　index.jsp界面上添加链接
+<a href="springmvc/testCookieValue">testCookieValue</a><br/><br/>
+
