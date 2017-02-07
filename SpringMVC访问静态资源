@@ -11,6 +11,7 @@
  </servlet-mapping>
 
 三、base标签
+
 <base href="${pagecontext.request.getcontextpath }/170207/">
 
 一和二为过滤，三为路径匹配
